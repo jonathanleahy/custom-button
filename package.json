@@ -2,7 +2,7 @@
   "name": "@jonathanleahy/custom-button",
   "module": "/dist/custom-button",
   "description": "A custom button for ReactJS projects.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": {
     "name": "Jonathan Leahy",
     "email": "jonathanl@newtimesystems.com"
