@@ -5,7 +5,7 @@ import '../style/button.scss';
 export default class CustomButton extends Component {
     render() {
         return(
-            <button>Hello</button>
+            <button>Hello how are you?</button>
         )
     }
 }
