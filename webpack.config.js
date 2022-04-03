@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const path = require("path");
+const {loader} = require("webpack");
 
 module.exports = {
     mode: "production",
@@ -24,6 +25,20 @@ module.exports = {
                         presets: ["@babel/preset-env", "@babel/preset-react"]
                     }
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
+                ]
             }
         ]
     },
