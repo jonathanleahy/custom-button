@@ -1,6 +1,7 @@
 const webpack = require("webpack");
-const TerserPlugin = require("terser-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
         filename: "custom-button.js",
         library: "custom-button",
         libraryTarget: 'umd',
-        path: path.resolve(__dirname, 'dict')
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
@@ -27,7 +28,9 @@ module.exports = {
         ]
     },
     optimization: {
-        minimize: [new TerserPlugin()]
+        minimizer: [new UglifyJsPlugin()]
     },
-    plugins: [new CleanWebpackPlugin(["dist"])]
+    plugins: [
+        new CleanWebpackPlugin()
+    ]
 }
