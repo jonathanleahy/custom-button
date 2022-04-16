@@ -7,10 +7,9 @@ const {loader} = require("webpack");
 
 module.exports = {
     mode: "production",
-    entry: "./src/index.js",
+    entry: "./src/custom-button.js",
     output: {
         filename: "custom-button.js",
-        library: "custom-button",
         libraryTarget: 'umd',
         path: path.resolve(__dirname, 'dist')
     },
